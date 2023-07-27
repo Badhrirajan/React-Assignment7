@@ -1,5 +1,5 @@
 To Create react app:
-npx create-react-app app-name
+npx create-react-app appname
 
 To Start React app:
 npm start
