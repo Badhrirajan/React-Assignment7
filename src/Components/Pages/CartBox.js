@@ -10,8 +10,8 @@ export default function CartBox({data = {},  increament = () => {}, decreament =
         <button className='btn btn-primary' onClick={() => decreament(data)}>-</button>
         <p className='text-center'>{data.quantity}</p>
         <button className='btn btn-primary' onClick={() => increament(data)}>+</button>
-        <button className='btn btn-danger mt-2' onClick={() => handleDelete(data.id)}>Remove from Cart</button>
+        <button className='btn btn-danger mt-2' onClick={() => handleDelete(data)}>Remove from Cart</button>
       </div> 
-  </section>                     
+  </section>              
   )
 }

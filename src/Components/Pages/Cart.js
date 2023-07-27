@@ -8,8 +8,8 @@ export default function Cart() {
     let list = useSelector((state) => state.cart.items)
     const dispatch = useDispatch()
 
-    function handleDeleteToCart(id = 0){
-      dispatch(removeItem(id = 0))
+    function handleDeleteToCart(data){
+      dispatch(removeItem(data))
   }
 
   function increament(data){
@@ -18,7 +18,7 @@ export default function Cart() {
 
   function decreament(data){
     if(data.quantity > 1){
-    dispatch(modifyItem({...data,quantity: data.quantity - 1}))
+    dispatch(modifyItem({...data ,quantity: data.quantity - 1}))
     }
   }
 
@@ -64,11 +64,20 @@ export default function Cart() {
       <div className='row'>
         <div className='col-8 d-flex flex-wrap gap-2'>
       {
-        list.map((data,i) => (
+        list.length > 0 ? list.map((data,i) => (
         <CartBox key={`product-${i}`} data={data} handleDelete={handleDeleteToCart} increament={increament} decreament={decreament}/>
         ))
+        : (<div className='container'>
+          <div className='container-fluid'>
+            <div className='row'>
+              <div className='col-12'> 
+          <img src="./Images/Cart.png" alt="No items"></img>
+          </div>
+          </div>
+          </div>
+        </div>)  
       }
-    </div>
+      </div>
     <div className='col-2'>
             <div className='card'>
               <div class="card-header">
