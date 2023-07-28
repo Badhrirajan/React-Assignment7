@@ -20,7 +20,6 @@ export const cartSlice = createSlice({
             const index = state.items.findIndex(
                 (data) => data.id === payload.id
             );
-            console.log(payload)
             state.items = [
                 ...state.items.slice(0,index),
                 {...state.items[index], quantity: payload.quantity},
