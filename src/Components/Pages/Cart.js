@@ -64,18 +64,18 @@ export default function Cart() {
       <div className='row'>
         <div className='col-8 d-flex flex-wrap gap-2'>
       {
-        list.length > 0 ? list.map((data,i) => (
+        list.map((data,i) => (
         <CartBox key={`product-${i}`} data={data} handleDelete={handleDeleteToCart} increament={increament} decreament={decreament}/>
         ))
-        : (<div className='container'>
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='col-12'> 
-          <img src="./Images/Cart.png" alt="No items"></img>
-          </div>
-          </div>
-          </div>
-        </div>)  
+        // : (<div className='container'>
+        //   <div className='container-fluid'>
+        //     <div className='row'>
+        //       <div className='col-12'> 
+        //   <img src="./Images/Cart.png" alt="No items"></img>
+        //   </div>
+        //   </div>
+        //   </div>
+        // </div>)  
       }
       </div>
     <div className='col-2'>
